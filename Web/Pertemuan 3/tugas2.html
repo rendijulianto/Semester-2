@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas</title>
+</head>
+<body>
+    <script>
+        var nama = "Rendi Julianto";
+        var tinggi_badan = 170;
+        var berat_badan = 65;
+        var bmi = berat_badan/((tinggi_badan/100)*(tinggi_badan/100));
+        keterangan = "Kegemukan";
+        if(bmi < 18.5) {
+            keterangan = "Kekurangan berat bedan";
+        } else if(bmi > 18.5 && bmi < 24.9) {
+            keterangan = "Normal (Ideal) ";
+        } else if( bmi > 25.0 && bmi < 29.9) {
+            keterangan ="Kelebihan berat badan";
+        }
+        document.write('Nama Anda : ', nama,'<br>');
+        document.write('Tinggi Badan : ', tinggi_badan  +'cm <br>');
+        document.write('Berat Badan : ' , berat_badan +'kg <br>');
+        document.write('BMI : ' , bmi +'kg <br>');
+        document.write('Keteragan : ', keterangan)
+    </script>
+</body>
+</html>
