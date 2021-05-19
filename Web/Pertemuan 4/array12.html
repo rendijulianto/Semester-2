@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 12</title>
+</head>
+<body>
+    <script>
+        var arr1 = [1,2,3,4,"a","b","c","d"];
+        document.write(arr1.toString(),"<br>"); 
+        // hasil: 1,2,3,4,a,b,c,d
+        // masukkan elemen "x","y","z"
+        // mulai dari elemen ke 4
+        var arr2 = arr1.splice(4,0,"x","y","z")
+        document.write(arr1.toString(),"<br>"); //hasil:1,2,3,4,x,y,z,a,b,c,d
+        document.write(arr2.toString(),"<br>"); 
+        // hasil: [] (array kosong)
+         
+        var arr1 = [1,2,3,4,"a","b","c","d"];
+        document.write(arr1.toString(),"<br>"); 
+        // hasil: 1,2,3,4,a,b,c,d
+         
+        // hapus 4 elemen mulai dari elemen ke 4
+        // masukkan elemen "x","y","z" pada posisi penghapusan
+        var arr2 = arr1.splice(4,4,"x","y","z")
+        document.write(arr1.toString(),"<br>"); 
+        // hasil: 1,2,3,4,x,y,z
+        document.write(arr2.toString(),"<br>"); 
+        // hasil: a,b,c,d
+    </script>
+</body>
+</html>

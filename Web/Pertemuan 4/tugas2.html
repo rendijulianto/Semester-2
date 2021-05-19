@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 1</title>
+</head>
+<body>
+    <center>
+        <p>TABEL NILAI SISWA</p>
+        <hr>
+        <table border="1">
+            <tr>
+                <th>NO</th>
+                <th>NAMA SISWA</th>
+                <th>TUGAS</th>
+                <th>UTS</th>
+                <th>UAS</th>
+                <th>NA</th>
+                <th>GRADE</th>
+            </tr>
+           <script>
+               var nama = ['Asep', 'Iwan', 'Cepi', 'Agus', 'Dadang'];
+               var tugas = [80,75,70,65,60];
+               var uts = [95,75,80,40,70];
+               var uas = [85,90,90,55,60];
+               j=1;
+               for (i in nama) {
+                   var na = 0.4*tugas[i]+0.3*uts[i]+0.3*uas[i];
+                   var grade = "E";
+                   if(na >= 80 && na <100) {
+                      grade = "A";
+                   } else if(na>=70 && na < 80) {
+                      grade = "B";
+                   } else if(na>=60 && na < 70) {
+                      grade = "C";
+                   } else if(na>=50 && na < 60) {
+                      grade = "D";
+                   }
+                   document.write(`
+                        <tr>
+                            <td>${j}</td>    
+                            <td>${nama[i]}</td>    
+                            <td>${tugas[i]}</td>    
+                            <td>${uts[i]}</td>    
+                            <td>${uas[i]}</td>    
+                            <td>${na}</td>    
+                            <td>${grade}</td>    
+                        </tr>
+                   `);
+                   j++;
+               }
+           </script>
+        </table>
+    </center>
+</body>
+</html>
