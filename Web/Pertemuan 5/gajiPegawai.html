@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Gaji Pegawai</title>
+</head>
+<body>
+    <center>
+        <p>Program Gaji Pegawai</p>
+        <hr width="50%">
+        <form name="form">
+            <table style="border-style:groove;">
+                <tr>
+                    <td>Nama Pegawai</td>
+                    <td> : <input type="text" name="nama_pegawai"></td>
+                </tr>
+                <tr>
+                    <td>Jam Kerja Perhari</td>
+                    <td> : <input type="number" name="jam_kerja_perhari" size=4></td>
+                </tr>
+                <tr>
+                    <td>Upah Perjam</td>
+                    <td> : <input type="number" name="upah_perjam" size=6></td>
+                </tr>
+                <tr>
+                    <td>Jumlah Anak</td>
+                    <td> : <input type="number" name="jumlah_anak" size="4"></td>
+                </tr>
+            </table>
+            <hr width="50%">
+            <table style="border-style:groove;">
+                <tr>
+                    <td>Gaji Per Bulan</td>
+                    <td> : <input type="number" name="gaji_perbulan"></td>
+                </tr>
+                <tr>
+                    <td>Tunjangan Anak</td>
+                    <td> : <input type="number" name="tunjangan_anak" size=4></td>
+                </tr>
+                <tr>
+                    <td>Gaji Total Perbulan</td>
+                    <td> : <input type="number" name="gaji_total_perbulan" size=6></td>
+                </tr>
+                <tr>
+                    <td>PPH 10%</td>
+                    <td> : <input type="number" name="pph" size="4"></td>
+                </tr>
+                <tr>
+                    <td>Gaji Bersih Diterima</td>
+                    <td> : <input type="number" name="gaji_bersih_diterima" size="4"></td>
+                </tr>
+            </table>
+            <hr width="50%">
+            <input type="button" onclick="proses()" value="Proses">
+            <input type="reset"  value="Reset">
+        </form>
+    </center>
+    <script>
+        function proses() {
+            var nama_pegawai = document.form.nama_pegawai.value;
+            var jam_kerja_perhari = document.form.jam_kerja_perhari.value;
+            var upah_perjam = document.form.upah_perjam.value;
+            var jumlah_anak = document.form.jumlah_anak.value;
+            var total_hari = 5*4; // 5 hari * 4 minggu = 1 bulan
+            var gajiPerhari = jam_kerja_perhari*upah_perjam;
+            var gaji_perbulan = gajiPerhari*total_hari;
+            var tunjangan_anak = gaji_perbulan*(jumlah_anak*0.1);
+            var gaji_total_perbulan = gaji_perbulan + tunjangan_anak;
+            var pph = gaji_total_perbulan * 0.10;
+            var gaji_bersih_diterima = gaji_total_perbulan - pph;
+            document.form.gaji_perbulan.value = gaji_perbulan;
+            document.form.tunjangan_anak.value = tunjangan_anak;
+            document.form.gaji_total_perbulan.value = gaji_total_perbulan;
+            document.form.pph.value = pph;
+            document.form.gaji_bersih_diterima.value = gaji_bersih_diterima;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Pertemuan 6</title>
+</head>
+<body>
+    <form name="form">
+        <center>
+            <p>Membaca Objek Bertipe Select Dan Text Area</p>
+            <hr>
+                <table>
+                    <tr>
+                        <td>Jabatan</td>
+                        <td>: <select name="jabatan" id="">
+                            <option value="">Pilih Salah Satu...</option>
+                            <option value="MANAGER">MANAGER</option>
+                            <option value="HRD">HRD</option>
+                            <option value="MARKETING">MARKETING</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Pendidikan</td>
+                        <td> : <select name="pendidikan" id="">
+                            <option value="">Pilih Salah Satu...</option>
+                            <option value="SMA">SMA</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>
+                            : <textarea name="alamat" id="" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gaji Pokok</td>
+                        <td><input type="number" name="gaji_pokok"></td>
+                    </tr>
+                    <tr>
+                        <td>Tunjangan</td>
+                        <td><input type="number" name="tunjangan"></td>
+                    </tr>
+                </table>
+            
+            <hr>
+            <input type="button" onclick="proses()" value="Proses">
+            <input type="reset" value="Reset">
+        </center>
+    </form>
+    <script>
+        function proses() {
+            var jabatan = document.form.jabatan.value;
+            var pendidikan = document.form.pendidikan.value;
+            var alamat = document.form.alamat.value;
+            var gaji_pokok = 0;
+            if(jabatan == "MANAGER") {
+                gaji_pokok = 10000000;
+            } else if(jabatan == "HRD") {
+                gaji_pokok = 8000000;
+            } else if(jabatan =="MARKETING") {
+                gaji_pokok = 6000000;
+            }
+            var tunjangan = 0;
+            if(pendidikan =="SMA") {
+                tunjangan = gaji_pokok*0.1;
+            } else if(pendidikan == "S1") {
+                tunjangan = gaji_pokok*0.15;
+            } else if(pendidikan == "S2") {
+                tunjangan = gaji_pokok*0.20;
+            } else if(pendidikan == "S3") {
+                tunjangan = gaji_pokok*0.30;
+            }
+            document.form.gaji_pokok.value = gaji_pokok;
+            document.form.tunjangan.value = tunjangan;
+            alert("Jabatan:"+jabatan+"\nPendidikan:"+pendidikan+"\nAlamat:"+alamat);
+        }
+    </script>
+</body>
+</html>

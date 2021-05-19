@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran </title>
+</head>
+<body>
+    <center>
+        <h2>Menggunakan Checkbox</h2>
+        <hr>
+           <form name="form">
+            <table>
+                <tr>
+                    <td>Makanan</td>
+                    <td>Minuman</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="nasi_goreng"> Nasi Goreng
+                    </td>
+                    <td>
+                        <input type="checkbox" name="es_jeruk"> Es Jeruk
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="soto"> Soto
+                    </td>
+                    <td>
+                        <input type="checkbox" name="teh_manis"> Teh Manis
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="nasi_rames"> Nasi Rames
+                    </td>
+                    <td>
+                        <input type="checkbox" name="es_kelapa"> Es Kelapa
+                    </td>
+                </tr>
+                <tr>
+                    <td>Harga</td>
+                    <td><input type="number" name="harga"></td>
+                </tr>
+            </table>
+            <hr>
+            <input type="button" value="Proses" onclick="proses()">
+            <input type="reset" value="Reset">
+           </form>
+        <hr>
+    </center>
+     <script>
+         function proses() {
+             var harga = 0;
+             if(document.form.nasi_goreng.checked) {
+                 harga =harga+12000;
+             } 
+             if(document.form.es_jeruk.checked) {
+                harga =harga+8000;
+             } 
+              if(document.form.soto.checked) {
+                harga =harga+8000;
+             } 
+              if(document.form.teh_manis.checked) {
+                harga =harga+4000;
+             } 
+              if(document.form.nasi_rames.checked) {
+                harga =harga+11000;
+             } 
+              if(document.form.es_kelapa.checked) {
+                harga =harga+10000;
+             }
+             document.form.harga.value=harga;
+         }
+     </script>
+</body>
+</html>

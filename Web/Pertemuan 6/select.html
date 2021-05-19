@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Pertemuan 6</title>
+</head>
+<body>
+    <form name="form">
+        <center>
+            <p>Membaca Objek Bertipe Select Dan Text Area</p>
+            <hr>
+                <table>
+                    <tr>
+                        <td>Jabatan</td>
+                        <td>: <select name="jabatan" id="">
+                            <option value="">Pilih Salah Satu...</option>
+                            <option value="MANAGER">MANAGER</option>
+                            <option value="HRD">HRD</option>
+                            <option value="MARKETING">MARKETING</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Pendidikan</td>
+                        <td> : <select name="pendidikan" id="">
+                            <option value="">Pilih Salah Satu...</option>
+                            <option value="SMA">SMA</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>
+                            : <textarea name="alamat" id="" cols="30" rows="5"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            <hr>
+            <input type="button" onclick="proses()" value="Proses">
+            <input type="reset" value="Reset">
+        </center>
+    </form>
+    <script>
+        function proses() {
+            var jabatan = document.form.jabatan.value;
+            var pendidikan = document.form.pendidikan.value;
+            var alamat = document.form.alamat.value;
+            alert("Jabatan:"+jabatan+"\nPendidikan:"+pendidikan+"\nAlamat:"+alamat);
+        }
+    </script>
+</body>
+</html>

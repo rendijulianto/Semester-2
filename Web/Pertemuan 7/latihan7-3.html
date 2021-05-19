@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Penjualan Tiket</title>
+</head>
+<body>
+    <center>
+        <p>PROGRAM PENJUALAN TIKET</p>
+        <hr>
+            <form name="form">
+                <table>
+                    <tr>
+                        <td>Kota Tujuan</td>
+                        <td><input type="radio" name="kota_tujuan" id="">Jakarta</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="kota_tujuan" id="">Semarang</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="radio" name="kota_tujuan" id="">Surabaya</td>
+                    </tr>
+                    <tr>
+                        <td>Jumlah Tiket</td>
+                        <td><input type="number" name="jumlah_tiket"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td>Harga Tiket</td>
+                        <td><input type="numbet" name="harga_tiket"></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><input type="numbet" name="total"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                </table>
+                <hr>
+                <input type="button" value="Proses" onclick="proses()">
+                <input type="reset" value="Reset">
+            </form>
+    </center>
+    <script>
+        function proses() {
+            var harga = 0;
+            if(document.form.kota_tujuan[0].checked) {
+                harga = 100000;
+            } else if(document.form.kota_tujuan[1].checked) {
+                harga = 150000;
+            } else if(document.form.kota_tujuan[2].checked) {
+                harga = 200000;
+            }
+            var total = harga* document.form.jumlah_tiket.value;
+            document.form.harga_tiket.value = harga;
+            document.form.total.value = total;
+        }
+    </script>
+</body>
+</html>
